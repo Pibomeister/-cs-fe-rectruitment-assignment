@@ -1,0 +1,44 @@
+li {
+    display: flex;
+    color: #373737;
+    border-bottom: 1px solid #D5D5D5;
+    border-right: 1px solid #D5D5D5;
+    &.is-first {
+        border-top: 1px solid #D5D5D5;
+    }
+    .category-bar {
+        width: 10px;
+    }
+    .item-content {
+        padding: 16px 8px;
+        display: flex;
+        flex: 1 1 auto;
+        align-items: center;
+        img {
+            width: 40px;
+            height: 40px;
+            margin: 0 32px;
+            text-indent:-9999px
+    
+        }
+        .transfer-date {
+            font-weight: 300;
+            font-size: 0.8em;
+            margin-left: 16px;
+        }
+        .transfer-info {
+            flex: 1 1 auto;
+            .merchant {
+                margin-top: -2px;
+                font-size: 0.9em;
+            }
+            .type {
+                font-weight: 300;
+                font-size: 0.8em;
+            }
+        }
+        .amount {
+            font-size: 0.9em;
+        }
+    }
+}

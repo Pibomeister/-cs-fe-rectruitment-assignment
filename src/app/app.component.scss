@@ -1,0 +1,36 @@
+$navbar-height: 86px;
+$highlight-orange: #FF9655;
+.navbar {
+    height: $navbar-height;
+    border-bottom: 2.5px solid $highlight-orange;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+    img {
+        height: 41px;
+        margin-left: 100px;
+        @media screen and (max-width:650px) {
+            margin-left: 20px;
+        }
+    }
+}
+
+.main-content {
+    min-height: calc(100vh - #{$navbar-height});
+    background-image: url('/assets/background.jpg');
+    background-size: cover;
+
+    .inner-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 70px 32px 16px;
+        display: flex;
+        app-transfer-form {
+            margin-right: 16px;
+        }
+        app-recent-transfers {
+            flex: 1 1 auto;
+        }
+    }
+}

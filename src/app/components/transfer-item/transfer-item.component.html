@@ -1,0 +1,30 @@
+<li [class.is-first]="isFirst">
+  <div
+    class="category-bar"
+    [style.backgroundColor]="transfer.categoryCode"
+  ></div>
+  <div class="item-content">
+    <div class="transfer-date">
+      {{ transfer.dates.valueDate | date: "MMM. dd" }}
+    </div>
+    <img
+      [src]="transfer.merchant.name | image"
+      [alt]="transfer.merchant.name"
+    />
+    <div class="transfer-info">
+      <div class="merchant">
+        {{ transfer.merchant.name }}
+      </div>
+      <div class="type">
+        {{ transfer.transaction.type }}
+      </div>
+    </div>
+    <div class="amount">
+      -
+      {{
+        transfer.transaction.amountCurrency.amount
+          | currency: transfer.transaction.amountCurrency.currencyCode
+      }}
+    </div>
+  </div>
+</li>
