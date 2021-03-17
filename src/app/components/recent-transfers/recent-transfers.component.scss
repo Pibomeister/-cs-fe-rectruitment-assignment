@@ -22,41 +22,7 @@
     padding: 32px 16px 8px; 
 }
 
-.toolbar {
-    display: flex;
-    align-items: stretch;
-    input {
-        flex: 1 1 auto;
-        outline: none;
-        border: none;
-        border-bottom: 1px solid #D6D2CE;
-        color: #8F8C88;
-        padding: 8px 0;
-    }
-    label {
-        font-size: 0.9em;
-        margin: 0 16px;
-        line-height: 30px;
-    }
-    .sort-buttons {
-        display: flex;
-        align-items: stretch;
-        button {
-            border-radius: 0;
-            padding: 0 16px;
-            outline: none;
-            border: 1px solid #CCCCCC;
-            border-right: none;
-            background: white;
-            cursor: pointer;
-            &:last-of-type {
-                border-right: 1px solid #CCCCCC;
-            }
-        }
-    }
 
-
-}
 
 ul {
     list-style: none;

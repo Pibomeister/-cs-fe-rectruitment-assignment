@@ -15,10 +15,11 @@ li {
         flex: 1 1 auto;
         align-items: center;
         img {
-            width: 40px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
             margin: 0 32px;
-            text-indent:-9999px
+            text-indent:-9999px;
+            filter: grayscale(100%);
     
         }
         .transfer-date {

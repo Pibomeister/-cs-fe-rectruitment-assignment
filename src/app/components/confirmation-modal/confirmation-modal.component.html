@@ -1,0 +1,22 @@
+<div class="modal-wrapper">
+  <div class="card-wrapper">
+    <div class="title">
+      <img class="icon" src="assets/icons/arrows.png" alt="arrows" />
+      <h2>Transfer confirmation</h2>
+    </div>
+    <div class="content">
+      <p>Are you sure you want to complete this transfer?</p>
+      <p>
+        Account balance now: {{ accountBalance | currency: defaultCurrency }}
+      </p>
+      <p>
+        Account balance after transfer:
+        {{ predictedBalance | currency: defaultCurrency }}
+      </p>
+      <div class="actions">
+        <button (click)="confirm.next(false)">Cancel</button>
+        <button class="orange" (click)="confirm.next(true)">Transfer</button>
+      </div>
+    </div>
+  </div>
+</div>

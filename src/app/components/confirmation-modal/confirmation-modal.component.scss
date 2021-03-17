@@ -1,0 +1,70 @@
+.modal-wrapper {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0, 0.4);
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-wrapper {
+    min-width: 310px;
+
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    background-color: white;
+}
+.title {
+    display: flex;
+    align-items: center;
+    background-color: #0C8397;
+    padding: 8px 16px;
+    h2 {
+        font-weight: 300;
+        color: white;
+        text-align: center;
+        flex: 1 1 auto;
+        margin: 0;
+        font-size: 1.2em;
+    }
+}
+
+.content { 
+    padding: 32px 16px 16px; 
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    button {
+        cursor: pointer;
+        padding: 14px;
+        min-width: 200px;
+        text-align: center;
+        border: none;
+        border-radius: 3px;
+        text-transform: uppercase;
+        outline: none;
+        &:first-of-type {
+            margin-right: 8px;
+        }
+        &:last-of-type {
+            margin-left: 8px;
+        }
+        &:not(.orange){
+            &:hover{
+            background-color: lightgray;
+            }
+        }
+        &.orange {
+            color: white;
+            background-color: #EE7033;
+            &:hover {
+                background-color: lighten(#EE7033, 5%);
+            }
+        }
+    }
+}

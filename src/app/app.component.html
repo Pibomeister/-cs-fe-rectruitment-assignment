@@ -3,9 +3,18 @@
 </div>
 <div class="main-content">
   <div class="inner-container">
-    <app-transfer-form></app-transfer-form>
+    <app-transfer-form
+      [accountBalance]="accountBalance$ | async"
+      (createTransfer)="onCreateTransfer($event)"
+    ></app-transfer-form>
     <app-recent-transfers
       [transfers]="transfers$ | async"
     ></app-recent-transfers>
   </div>
 </div>
+<app-confirmation-modal
+  *ngIf="showConfirmationModal && !!newTransfer"
+  [accountBalance]="accountBalance$ | async"
+  [transfer]="newTransfer"
+  (confirm)="onConfirmTransfer($event)"
+></app-confirmation-modal>

@@ -10,10 +10,29 @@ import { TransferService } from './services/transfer.service';
 })
 export class AppComponent implements OnInit {
   transfers$!: Observable<Transfer[]>;
+  accountBalance$: Observable<number>;
+  showConfirmationModal: boolean = false;
+  newTransfer!: Transfer | null;
 
-  constructor(private readonly transferService: TransferService) {}
+  constructor(private readonly transferService: TransferService) {
+    this.transfers$ = this.transferService.transfers$;
+    this.accountBalance$ = this.transferService.accountBalance$;
+  }
 
   ngOnInit(): void {
-    this.transfers$ = this.transferService.loadAll();
+    this.transferService.loadAll();
+  }
+
+  onCreateTransfer(transfer: Transfer): void {
+    this.newTransfer = transfer;
+    this.showConfirmationModal = true;
+  }
+
+  onConfirmTransfer(result: boolean): void {
+    this.showConfirmationModal = false;
+    if (result && !!this.newTransfer) {
+      this.transferService.addTransfer(this.newTransfer);
+    }
+    this.newTransfer = null;
   }
 }

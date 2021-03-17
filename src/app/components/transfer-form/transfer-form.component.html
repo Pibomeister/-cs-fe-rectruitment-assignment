@@ -4,15 +4,31 @@
     <h2>Make a Transfer</h2>
   </div>
   <div class="content">
-    <form class="form">
+    <form class="form" [formGroup]="form" (ngSubmit)="onFormSubmitted()">
       <label for="from">From account</label>
-      <input #from type="text" placeholder="From account" disabled />
-      <label for="from">To account</label>
-      <input #from type="text" placeholder="To account" />
-      <label for="from">Amount</label>
-      <input #from type="number" placeholder="$0.00" />
+      <input
+        id="from"
+        type="text"
+        formControlName="from"
+        placeholder="From account"
+        readonly
+      />
+      <label for="to">To account</label>
+      <input
+        id="to"
+        type="text"
+        formControlName="to"
+        placeholder="To account"
+      />
+      <label for="amount">Amount</label>
+      <input
+        id="amount"
+        type="number"
+        formControlName="amount"
+        placeholder="$0.00"
+      />
       <div class="form-actions">
-        <button type="submit">Submit</button>
+        <button type="submit" [disabled]="!formIsValid">Submit</button>
       </div>
     </form>
   </div>

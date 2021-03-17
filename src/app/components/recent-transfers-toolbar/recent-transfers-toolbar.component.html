@@ -1,0 +1,41 @@
+<div class="toolbar">
+  <div class="search-bar">
+    <input
+      type="text"
+      [ngModel]="searchString"
+      (ngModelChange)="onSetSearch($event)"
+      placeholder="Search by typing"
+    />
+    <button
+      class="clear-search"
+      *ngIf="!!searchString"
+      (click)="onSetSearch('')"
+    >
+      X
+    </button>
+  </div>
+  <div class="sort-buttons">
+    <label>Sort by</label>
+    <button (click)="onSetSortType('date')">
+      Date
+      <span *ngIf="sortType === 'date'"
+        ><span *ngIf="!sortDirectionAsc">⬇️</span
+        ><span *ngIf="sortDirectionAsc">⬆️</span></span
+      >
+    </button>
+    <button (click)="onSetSortType('beneficiary')">
+      Beneficiary
+      <span *ngIf="sortType === 'beneficiary'"
+        ><span *ngIf="!sortDirectionAsc">⬇️</span
+        ><span *ngIf="sortDirectionAsc">⬆️</span></span
+      >
+    </button>
+    <button (click)="onSetSortType('amount')">
+      Amount
+      <span *ngIf="sortType === 'amount'"
+        ><span *ngIf="!sortDirectionAsc">⬇️</span
+        ><span *ngIf="sortDirectionAsc">⬆️</span></span
+      >
+    </button>
+  </div>
+</div>

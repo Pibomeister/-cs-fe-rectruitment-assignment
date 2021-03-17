@@ -4,20 +4,15 @@
     <h2>Recent transactions</h2>
   </div>
   <div class="content">
-    <div class="toolbar">
-      <input type="text" placeholder="Search by typing" />
-      <div class="sort-buttons">
-        <label>Sort by</label>
-        <button>Date</button>
-        <button>Beneficiary</button>
-        <button>Amount</button>
-      </div>
-    </div>
+    <app-recent-transfers-toolbar
+      (searchUpdated)="onSearchChange($event)"
+      (sortUpdated)="onSortChange($event)"
+    ></app-recent-transfers-toolbar>
     <ul class="transfers">
       <app-transfer-item
         [transfer]="transfer"
         [isFirst]="isFirst"
-        *ngFor="let transfer of transfers; first as isFirst"
+        *ngFor="let transfer of displayedTransfers; first as isFirst"
       >
       </app-transfer-item>
     </ul>

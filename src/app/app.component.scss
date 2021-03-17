@@ -2,6 +2,10 @@ $navbar-height: 86px;
 $highlight-orange: #FF9655;
 .navbar {
     height: $navbar-height;
+    position: sticky;
+    background-color: white;
+    z-index: 1;
+    top: 0;
     border-bottom: 2.5px solid $highlight-orange;
     display: flex;
     align-items: center;
